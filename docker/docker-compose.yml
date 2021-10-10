@@ -1,4 +1,3 @@
-version: "2.1"
 services:
   transmission:
     image: ghcr.io/linuxserver/transmission
@@ -19,3 +18,8 @@ services:
       - 51410:51410
       - 51410:51410/udp
     restart: always
+    logging:
+      driver: json-file
+      options:
+          max-size: "5m"
+          max-file: "2"
